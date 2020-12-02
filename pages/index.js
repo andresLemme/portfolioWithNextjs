@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [data, setData] = useState({})
+  const [data, setData] = useState({});
 
   function handleChange(e) {
     setSearchTerm(e.target.value);
@@ -18,24 +18,43 @@ export default function Home() {
       `https://api.github.com/users/${searchTerm}`
     );
 
-    const projectsData = await axios.get('https://api.jsonbin.io/b/5fc817b19abe4f6e7caec5c5/1')
+    const projectsData = await axios.get(
+      "https://api.jsonbin.io/b/5fc817b19abe4f6e7caec5c5/4"
+    );
 
-    const userProjects = projectsData.data.find((user) => user.name === searchTerm)
+    const userProjects = projectsData.data.find(
+      (user) => user.name == searchTerm
+    );
 
     setData({
-      githubData: github.data
-    })
+      githubData: github.data,
+      projects: userProjects.projects.length > 0 ? userProjects.projects : []
+    });
   }
   return (
-    <div>
+    <main>
       <h1>Busca tu perfil</h1>
       <Input
         placeholder="Buscar usuario"
         name="searchInput"
-        onChance={handleChange}
-        value={setSearchTerm}
+        onChange={handleChange}
+        value={searchTerm}
       />
       <Button value="Buscar" name="searchAction" onClick={handleClick} />
-    </div>
+      <section>
+        {data.githubData && (
+          <div>
+            <div className="img">
+              <img src={data.githubData.avatar_url} />
+            </div>
+            <div className="info">
+              <h2>{data.githubData.name}</h2>
+              <h3>{data.githubData.bio}</h3>
+            </div>
+          </div>
+        )}
+        <div></div>
+      </section>
+    </main>
   );
 }
