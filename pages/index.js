@@ -15,7 +15,7 @@ export default function Home() {
   }
   function handleKeyPress(e) {
     if (e.key == 'Enter') {
-      e.preventDefault();
+      // e.preventDefault();
       handleClick();
     }
 }
