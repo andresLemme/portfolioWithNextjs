@@ -10,7 +10,10 @@ export default function Home() {
   const [data, setData] = useState({});
 
   function handleChange(e) {
-    setSearchTerm(e.target.value);
+     setSearchTerm(e.target.value);
+     
+     
+     
   }
 
   async function handleClick() {
@@ -24,12 +27,13 @@ export default function Home() {
 
     const userProjects = projectsData.data.find(
       (user) => user.name == searchTerm
-    );
+    );  
 
     setData({
       githubData: github.data,
-      projects: userProjects.projects.length > 0 ? userProjects.projects : []
+      projects: userProjects ? userProjects.projects : []
     });
+    setSearchTerm(" ")
   }
   return (
     <main>
@@ -53,7 +57,18 @@ export default function Home() {
             </div>
           </div>
         )}
-        <div></div>
+        {data.projects && (
+          <div>
+          {data.projects.map((project, key) =>{
+            return(
+              <div>
+                <h4>{project.name}</h4>
+                <h5>{project.desc}</h5>
+              </div>
+            )
+          })}
+        </div>
+        )}
       </section>
     </main>
   );
