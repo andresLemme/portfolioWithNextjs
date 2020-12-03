@@ -9,12 +9,11 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState({});
 
+
   function handleChange(e) {
      setSearchTerm(e.target.value);
-     
-     
-     
   }
+
 
   async function handleClick() {
     const github = await axios.get(
@@ -35,6 +34,8 @@ export default function Home() {
     });
     setSearchTerm(" ")
   }
+
+
   return (
     <main>
       <h1>Busca tu perfil</h1>
@@ -61,7 +62,7 @@ export default function Home() {
           <div>
           {data.projects.map((project, key) =>{
             return(
-              <div>
+              <div key={key}>
                 <h4>{project.name}</h4>
                 <h5>{project.desc}</h5>
               </div>
