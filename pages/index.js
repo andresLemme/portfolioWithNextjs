@@ -9,10 +9,16 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState({});
 
-
   function handleChange(e) {
-     setSearchTerm(e.target.value);
+    setSearchTerm(e.target.value);
+    
   }
+  function handleKeyPress(e) {
+    if (e.key == 'Enter') {
+      e.preventDefault();
+      handleClick();
+    }
+}
 
 
   async function handleClick() {
@@ -26,15 +32,14 @@ export default function Home() {
 
     const userProjects = projectsData.data.find(
       (user) => user.name == searchTerm
-    );  
+    );
 
     setData({
       githubData: github.data,
-      projects: userProjects ? userProjects.projects : []
+      projects: userProjects ? userProjects.projects : [],
     });
-    setSearchTerm(" ")
+    setSearchTerm(" ");
   }
-
 
   return (
     <main>
@@ -44,6 +49,7 @@ export default function Home() {
         name="searchInput"
         onChange={handleChange}
         value={searchTerm}
+        onKeyPress={handleKeyPress}
       />
       <Button value="Buscar" name="searchAction" onClick={handleClick} />
       <section>
@@ -60,15 +66,15 @@ export default function Home() {
         )}
         {data.projects && (
           <div>
-          {data.projects.map((project, key) =>{
-            return(
-              <div key={key}>
-                <h4>{project.name}</h4>
-                <h5>{project.desc}</h5>
-              </div>
-            )
-          })}
-        </div>
+            {data.projects.map((project, key) => {
+              return (
+                <div key={key}>
+                  <h4>{project.name}</h4>
+                  <h5>{project.desc}</h5>
+                </div>
+              );
+            })}
+          </div>
         )}
       </section>
     </main>
