@@ -2,6 +2,7 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -12,8 +13,16 @@
     flex-direction: column;
     justify-content: center;
      align-items: center;
+     .title{
+       font-size: 45px;
+     }
      .inputContent{
-       
+       width: 360px;
+       display: flex;
+       justify-content: space-around;
+       .searchbox{
+width: 40px;
+       }
      }
   }
 }

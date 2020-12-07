@@ -42,14 +42,16 @@ export default function Home() {
   return (
     <main className={styles.wrapper_all}>
       <div className={styles.boxInput}>
-        <h1>Busca tu perfil</h1>
+        <h1 className={styles.title}>Busca tu perfil</h1>
         <div className={styles.inputContent}>
           <Input
+          className={styles.searchbox}
             placeholder="Buscar usuario"
             name="searchInput"
             onChange={handleChange}
             value={searchTerm}
             onKeyPress={handleKeyPress}
+            
           />
           <Button value="Buscar" name="searchAction" onClick={handleClick} />
         </div>
