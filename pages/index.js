@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import styles from "../styles/Home.module.css";
+import styles from "../pages/Home.module.scss";
 import { useState } from "react";
 import axios from "axios";
 
@@ -11,15 +11,13 @@ export default function Home() {
 
   function handleChange(e) {
     setSearchTerm(e.target.value);
-    
   }
   function handleKeyPress(e) {
-    if (e.key == 'Enter') {
+    if (e.key == "Enter") {
       // e.preventDefault();
       handleClick();
     }
-}
-
+  }
 
   async function handleClick() {
     const github = await axios.get(
@@ -42,16 +40,20 @@ export default function Home() {
   }
 
   return (
-    <main>
-      <h1>Busca tu perfil</h1>
-      <Input
-        placeholder="Buscar usuario"
-        name="searchInput"
-        onChange={handleChange}
-        value={searchTerm}
-        onKeyPress={handleKeyPress}
-      />
-      <Button value="Buscar" name="searchAction" onClick={handleClick} />
+    <main className={styles.wrapper_all}>
+      <div className={styles.boxInput}>
+        <h1>Busca tu perfil</h1>
+        <div className={styles.inputContent}>
+          <Input
+            placeholder="Buscar usuario"
+            name="searchInput"
+            onChange={handleChange}
+            value={searchTerm}
+            onKeyPress={handleKeyPress}
+          />
+          <Button value="Buscar" name="searchAction" onClick={handleClick} />
+        </div>
+      </div>
       <section>
         {data.githubData && (
           <div>
