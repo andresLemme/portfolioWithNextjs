@@ -45,15 +45,19 @@ export default function Home() {
         <h1 className={styles.title}>Busca tu perfil</h1>
         <div className={styles.inputContent}>
           <Input
-          className={styles.searchbox}
+            className={styles.searchbox}
             placeholder="Buscar usuario"
             name="searchInput"
             onChange={handleChange}
             value={searchTerm}
             onKeyPress={handleKeyPress}
-            
           />
-          <Button value="Buscar" name="searchAction" onClick={handleClick} />
+          <Button
+            className={styles.btn}
+            value="Buscar"
+            name="searchAction"
+            onClick={handleClick}
+          />
         </div>
       </div>
       <section>
