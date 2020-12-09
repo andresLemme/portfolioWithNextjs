@@ -60,10 +60,10 @@ export default function Home() {
           />
         </div>
       </div>
-      <section>
+      <section className={styles.githubData_Box}>
         {data.githubData && (
-          <div>
-            <div className="img">
+          <div className={styles.info_Github}>
+            <div className={styles.img_Box}>
               <img src={data.githubData.avatar_url} />
             </div>
             <div className="info">
