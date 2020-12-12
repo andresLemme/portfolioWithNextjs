@@ -66,9 +66,9 @@ export default function Home() {
             <div className={styles.img_Box}>
               <img src={data.githubData.avatar_url} />
             </div>
-            <div className="info">
-              <h2>{data.githubData.name}</h2>
-              <h3>{data.githubData.bio}</h3>
+            <div className={styles.infoBio}>
+              <h2 className={styles.title}>{data.githubData.name}</h2>
+              <h3 className={styles.biodesc}>{data.githubData.bio}</h3>
             </div>
           </div>
         )}
