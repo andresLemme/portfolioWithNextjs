@@ -66,6 +66,7 @@
         overflow: hidden;
         background-color: #fff;
         box-shadow: 0 -1px 10px 0 rgba(0,0,0,.1), 0 1px 1px 0 rgba(0,0,0,.1);
+        margin-bottom: 10px;
       .img_Box{
         width: 200px;
         display: flex;
@@ -100,6 +101,18 @@
           letter-spacing: 1px;
           line-height: 30px;
         }
+      }
+    }
+    .projectsBox{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      .projectBox{
+        width: 200px;
+        border: #cdd9ed 1px solid;
+        margin: 10px 0;
       }
     }
   }

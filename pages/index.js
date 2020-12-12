@@ -73,10 +73,10 @@ export default function Home() {
           </div>
         )}
         {data.projects && (
-          <div>
+          <div className={styles.projectsBox}>
             {data.projects.map((project, key) => {
               return (
-                <div key={key}>
+                <div className={styles.projectBox} key={key}>
                   <h4>{project.name}</h4>
                   <h5>{project.desc}</h5>
                 </div>
