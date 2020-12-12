@@ -62,8 +62,10 @@
       width: 100%;
       display: flex;
       border-radius: 10px;
-        border: #678efe 1px solid;
+        border: #cdd9ed 1px solid;
         overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 -1px 10px 0 rgba(0,0,0,.1), 0 1px 1px 0 rgba(0,0,0,.1);
       .img_Box{
         width: 200px;
         display: flex;
@@ -72,6 +74,9 @@
         align-items: center;
         img{
           width: 200px;
+          border-radius: 100px;
+          padding: 20px;
+          
         }
         
       }
@@ -85,9 +90,15 @@
           width: 100%;
           display: flex;
           flex-direction: column;
+          color: #678efe;
         }
         .biodesc{
           width: 100%;
+          color:#cdd9ed;
+          margin: 0;
+          font-weight: 400;
+          letter-spacing: 1px;
+          line-height: 30px;
         }
       }
     }
