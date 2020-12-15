@@ -109,10 +109,20 @@
       flex-wrap: wrap;
       justify-content: space-between;
       margin-bottom: 10px;
+      display: flex;
       .projectBox{
         width: 200px;
         border: #cdd9ed 1px solid;
         margin: 10px 0;
+        height: auto;
+        border-radius: 5px;
+        .borderLeft{
+          height: 104px;
+          width: 10px;
+          position: absolute;
+          border-radius: 5px 0 0 5px;
+        
+        }
       }
     }
   }

@@ -25,7 +25,7 @@ export default function Home() {
     );
 
     const projectsData = await axios.get(
-      "https://api.jsonbin.io/b/5fc817b19abe4f6e7caec5c5/4"
+      "https://api.jsonbin.io/b/5fc817b19abe4f6e7caec5c5/5"
     );
 
     const userProjects = projectsData.data.find(
@@ -77,6 +77,7 @@ export default function Home() {
             {data.projects.map((project, key) => {
               return (
                 <div className={styles.projectBox} key={key}>
+                <i className={styles.borderLeft } style={{background: project.color}}> </i>
                   <h4>{project.name}</h4>
                   <h5>{project.desc}</h5>
                 </div>
