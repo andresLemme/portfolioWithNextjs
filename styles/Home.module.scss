@@ -107,21 +107,22 @@
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: left;
       margin-bottom: 10px;
-      display: flex;
       .projectBox{
-        width: 200px;
+        width: calc(25% - 14px);
         border: #cdd9ed 1px solid;
-        margin: 10px 0;
-        height: auto;
+        margin: 10px 7px;
+        height: 100%;
         border-radius: 5px;
         .borderLeft{
-          height: 104px;
+          height: 101px;
           width: 10px;
           position: absolute;
           border-radius: 5px 0 0 5px;
-        
+        }
+        .info_box{
+        padding: 0 0 0 20px;
         }
       }
     }

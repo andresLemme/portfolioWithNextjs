@@ -1,17 +1,22 @@
 import axios from "axios";
+import styles from '../styles/handler.module.scss'
+
 
 export default function Handler({ githubData, projects }) {
   return (
     <main>
       {githubData && (
-        <section>
-          <div className="img">
+        <section className={styles.Home_githubData_Box} >
+        <div className={styles.Home_info_Github2}>
+        <div className={styles.Home_img_Box}>
             <img src={githubData.avatar_url} />
           </div>
-          <div className="info">
-            <h2>{githubData.name}</h2>
-            <h3>{githubData.bio}</h3>
+          <div className={styles.Home_infoBio}>
+            <h2 className={styles.title}>{githubData.name}</h2>
+            <h3 className={styles.biodesc}>{githubData.bio}</h3>
           </div>
+        </div>
+          
         </section>
       )}
 
@@ -40,7 +45,7 @@ export async function getStaticProps({ params }) {
   const github = await axios.get(`https://api.github.com/users/${handler}`);
 
   const projectsData = await axios.get(
-    "https://api.jsonbin.io/b/5fc817b19abe4f6e7caec5c5/4"
+    "https://api.jsonbin.io/b/5fc817b19abe4f6e7caec5c5/7"
   );
 
   const userProjects = projectsData.data.find((user) => user.name == handler);

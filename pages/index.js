@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import styles from "../pages/Home.module.scss";
+import styles from "../styles/Home.module.scss";
 import { useState } from "react";
 import axios from "axios";
 
@@ -25,7 +25,7 @@ export default function Home() {
     );
 
     const projectsData = await axios.get(
-      "https://api.jsonbin.io/b/5fc817b19abe4f6e7caec5c5/5"
+      "https://api.jsonbin.io/b/5fc817b19abe4f6e7caec5c5/7"
     );
 
     const userProjects = projectsData.data.find(
@@ -69,7 +69,7 @@ export default function Home() {
             <div className={styles.infoBio}>
               <h2 className={styles.title}>{data.githubData.name}</h2>
               <h3 className={styles.biodesc}>{data.githubData.bio}</h3>
-            </div>
+            </div>  
           </div>
         )}
         {data.projects && (
@@ -78,8 +78,10 @@ export default function Home() {
               return (
                 <div className={styles.projectBox} key={key}>
                 <i className={styles.borderLeft } style={{background: project.color}}> </i>
+                  <div className={styles.info_box}>
                   <h4>{project.name}</h4>
-                  <h5>{project.desc}</h5>
+                  <p>{project.desc}</p>
+                  </div>
                 </div>
               );
             })}
