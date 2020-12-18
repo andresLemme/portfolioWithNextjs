@@ -13,14 +13,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
     .title {
       font-size: 45px;
       color: #678efe;
+      @media (max-width: 414px){
+        font-size: 35px;
+      }
     }
     .inputContent {
       width: 400px;
       display: flex;
       justify-content: space-around;
+      @media (max-width: 414px){
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 0 20px;
+      }
 
       input[type="text"] {
         border: 1px solid #cdd9ed;
@@ -39,6 +48,9 @@
           border: 1px solid #678efe;
           border-color: #678efe;
         }
+        @media (max-width: 414px){
+          width: 100%;
+        }
       }
       button {
         width: 100px;
@@ -49,6 +61,11 @@
           background-color: #678efe;
           color: #fff;
         }
+        @media (max-width: 414px){
+          width: 100%;
+          height: 40px;
+          margin-top: 10px;
+        }
       }
     }
   }
@@ -58,6 +75,9 @@
     display: flex;
     flex-direction: column;
     margin: 40px 0;
+    @media (max-width: 414px){
+      max-width: 370px;
+    }
     .info_Github{
       width: 100%;
       display: flex;
@@ -67,12 +87,21 @@
         background-color: #fff;
         box-shadow: 0 -1px 10px 0 rgba(0,0,0,.1), 0 1px 1px 0 rgba(0,0,0,.1);
         margin-bottom: 10px;
+        @media (max-width: 414px){
+          flex-wrap: wrap;
+          
+        }
       .img_Box{
         width: 200px;
         display: flex;
         flex-direction: row;
         justify-content:left;
         align-items: center;
+        @media (max-width: 414px){
+          // text-align: center;
+          width: 100%;
+          justify-content: center;
+        }
         img{
           width: 200px;
           border-radius: 100px;
@@ -100,6 +129,7 @@
           font-weight: 400;
           letter-spacing: 1px;
           line-height: 30px;
+          padding-bottom: 20px;
         }
       }
     }
@@ -109,20 +139,37 @@
       flex-wrap: wrap;
       justify-content: left;
       margin-bottom: 10px;
+      @media (max-width: 414px){
+        flex-wrap: nowrap;
+        overflow: auto;
+      }
       .projectBox{
         width: calc(25% - 14px);
         border: #cdd9ed 1px solid;
         margin: 10px 7px;
         height: 100%;
         border-radius: 5px;
+        @media (max-width: 414px){
+         width: calc(50%);;
+        }
         .borderLeft{
           height: 101px;
           width: 10px;
           position: absolute;
           border-radius: 5px 0 0 5px;
+          @media (max-width: 414px){
+            position: inherit;
+          }
+         
         }
+       
         .info_box{
         padding: 0 0 0 20px;
+        @media (max-width: 414px){
+          width: 111px;
+          height: 150px;
+          font-size: 15px;
+        }
         }
       }
     }
