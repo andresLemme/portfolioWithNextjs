@@ -76,7 +76,8 @@
     flex-direction: column;
     margin: 40px 0;
     @media (max-width: 414px){
-      max-width: 370px;
+      max-width: 100%;
+      padding: 0 20px;
     }
     .info_Github{
       width: 100%;
@@ -130,6 +131,9 @@
           letter-spacing: 1px;
           line-height: 30px;
           padding-bottom: 20px;
+          @media (max-width: 414px){
+            letter-spacing: inherit;
+          }
         }
       }
     }
@@ -149,6 +153,7 @@
         margin: 10px 7px;
         height: 100%;
         border-radius: 5px;
+        background-color: #fff;
         @media (max-width: 414px){
          width: calc(50%);;
         }
@@ -162,7 +167,6 @@
           }
          
         }
-       
         .info_box{
         padding: 0 0 0 20px;
         @media (max-width: 414px){
